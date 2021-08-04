@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bestzmr.buyi.system.mapper.UserMapper">
+    <resultMap id="UserMap" type="com.bestzmr.buyi.system.entity.User">
+        <id property="id" column="id"/>
+        <result property="userName" column="username"/>
+        <result property="password" column="password"/>
+        <result property="fullName" column="fullname"/>
+        <collection property="userRoles" column="id" ofType="com.bestzmr.buyi.system.entity.UserRole" select="com.bestzmr.buyi.system.mapper.UserRoleMapper.findUserRoleByUserId"/>
+
+    </resultMap>
+
+    <select id="findByUserName" resultMap="UserMap">
+        select * from user where username=#{username}
+    </select>
+    <select id="existsByUserName" resultType="java.lang.Boolean">
+
+    </select>
+    <select id="findAllUsers" resultMap="UserMap">
+        select * from `user`
+    </select>
+    <delete id="deleteByUserName" parameterType="String">
+
+    </delete>
+    <insert id="saveUser" parameterType="com.bestzmr.buyi.system.entity.User">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into user(username,password,fullname) values(#{userName},#{password},#{fullName})
+    </insert>
+</mapper>

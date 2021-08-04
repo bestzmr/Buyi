@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bestzmr.buyi.system.mapper.UserRoleMapper">
+    <resultMap id="UserRoleMap" type="com.bestzmr.buyi.system.entity.UserRole">
+        <id property="id" column="id"/>
+        <collection property="role" column="role_id" ofType="com.bestzmr.buyi.system.entity.Role" select="com.bestzmr.buyi.system.mapper.RoleMapper"/>
+    </resultMap>
+    <select id="findUserRoleByUserId" resultMap="UserRoleMap">
+        select * from user_role where user_id = #{userId}
+    </select>
+    <insert id="saveUserRole" parameterType="com.bestzmr.buyi.system.entity.UserRole">
+        insert into user_role(user_id,role_id) values (#{userId},#{roleId})
+    </insert>
+</mapper>
