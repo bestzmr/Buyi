@@ -1,7 +1,6 @@
 package com.bestzmr.buyi.system.controller;
 
 import com.bestzmr.buyi.system.entity.User;
-import com.bestzmr.buyi.system.representation.UserRepresentation;
 import com.bestzmr.buyi.system.request.UserRegisterRequest;
 import com.bestzmr.buyi.system.request.UserUpdateRequest;
 import com.bestzmr.buyi.system.service.UserService;

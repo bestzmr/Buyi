@@ -4,8 +4,6 @@ import com.bestzmr.buyi.security.constants.SecurityConstants;
 import com.bestzmr.buyi.security.exception.JwtAccessDeniedHandler;
 import com.bestzmr.buyi.security.exception.JwtAuthenticationEntryPoint;
 import com.bestzmr.buyi.security.filter.JwtAuthorizationFilter;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpMethod;

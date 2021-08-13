@@ -2,7 +2,6 @@ package com.bestzmr.buyi.system.service;
 
 import com.bestzmr.buyi.system.entity.Role;
 import com.bestzmr.buyi.system.entity.User;
-import com.bestzmr.buyi.system.entity.UserRole;
 import com.bestzmr.buyi.system.enums.RoleType;
 import com.bestzmr.buyi.system.exception.RoleNotFoundException;
 import com.bestzmr.buyi.system.exception.UserNameAlreadyExistException;
@@ -10,22 +9,18 @@ import com.bestzmr.buyi.system.exception.UserNameNotFoundException;
 import com.bestzmr.buyi.system.mapper.RoleMapper;
 import com.bestzmr.buyi.system.mapper.UserMapper;
 import com.bestzmr.buyi.system.mapper.UserRoleMapper;
-import com.bestzmr.buyi.system.representation.UserRepresentation;
 import com.bestzmr.buyi.system.request.UserRegisterRequest;
 import com.bestzmr.buyi.system.request.UserUpdateRequest;
 import com.github.pagehelper.PageHelper;
 import com.google.common.collect.ImmutableMap;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 /**
  * @author: Merlin
